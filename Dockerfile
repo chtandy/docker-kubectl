@@ -11,6 +11,7 @@ RUN set -eux \
   && { \
      echo "[supervisord]"; \
      echo "nodaemon=true"; \
+     echo "user=root"; \
      echo "logfile=/dev/null"; \
      echo "logfile_maxbytes=0"; \
      echo "pidfile=/tmp/supervisord.pid"; \
