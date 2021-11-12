@@ -1,0 +1,18 @@
+version: '3'
+services:
+  kubectl:
+    build:
+      context: ./
+    image: r19750927/kubectl:latest
+    container_name: kubectl
+    hostname: kubectl
+    volumes:
+      - ./config:/root/.kube/config:ro
+      - ./hosts:/etc/hosts:ro
+      - ./data:/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+        
