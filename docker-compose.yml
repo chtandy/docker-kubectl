@@ -1,11 +1,11 @@
 version: '3'
 services:
-  kubectl:
+  ubuntu-k8s:
     build:
       context: ./
     image: r19750927/kubectl:latest
-    container_name: kubectl
-    hostname: kubectl
+    container_name: ubuntu-k8s
+    hostname: ubuntu-k8s
     volumes:
       - ./config:/root/.kube/config:ro
       - ./hosts:/etc/hosts:ro
